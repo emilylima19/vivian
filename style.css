@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #222;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  user-select: none;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+#status {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  min-height: 24px;
+}
+
+#board {
+  width: 640px;
+  height: 640px;
+  margin: 0 auto 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 3px solid #fff;
+  box-shadow: 0 0 15px #000;
+  touch-action: manipulation;
+  background-color: #f0d9b5;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.square.dark {
+  background-color: #b58863;
+}
+
+.piece {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 5px auto;
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+
+.piece.red {
+  background-color: #d9534f;
+  box-shadow: 0 0 10px #e57373;
+}
+
+.piece.black {
+  background-color: #222;
+  box-shadow: 0 0 10px #444;
+}
+
+.piece.king::after {
+  content: "♔";
+  color: gold;
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.square.highlight {
+  outline: 4px solid yellow;
+}
+
+.square.possible-move {
+  background-color: #6f9f6f;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
